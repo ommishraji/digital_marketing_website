@@ -35,7 +35,7 @@ class _SmoothPhysicsCursorState extends State<SmoothPhysicsCursor>
   void _onTick(Duration elapsed) {
     if (_currentPosition == widget.targetPosition) return;
 
-    final double dt = 1.0 / 60.0;
+    final double dt = 1.0 / 12.0;
     final double friction = 1.0 - math.exp(-_speed * dt);
 
     Offset newPos = Offset(
@@ -73,17 +73,17 @@ class _ShadowCursorPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = Colors.black.withOpacity(0.15)
+      ..color = Colors.orange
       ..style = PaintingStyle.fill;
 
-    canvas.drawCircle(mousePosition, 25, paint);
+    canvas.drawCircle(mousePosition, 5, paint);
 
     final borderPaint = Paint()
-      ..color = Colors.black.withOpacity(0.5)
+      ..color = Colors.orange.withOpacity(0.5)
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 1.0;
+      ..strokeWidth = .5;
 
-    canvas.drawCircle(mousePosition, 25, borderPaint);
+    canvas.drawCircle(mousePosition, 5, borderPaint);
   }
 
   @override

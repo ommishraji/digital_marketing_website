@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../animations/animations.dart';
 import '../config/theme.dart';
+import '../animations/animations.dart';
 
 class FeaturesSection extends StatelessWidget {
   const FeaturesSection({super.key});
