@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'package:flutter/scheduler.dart';
 import 'config/theme.dart';
@@ -72,7 +72,7 @@ class _HomePageState extends State<HomePage>
         },
         child: Stack(
           children: [
-            // Large background circles
+            // background
             const Positioned.fill(child: EnhancedBackgroundTexture()),
             // Main content
             SingleChildScrollView(
@@ -106,13 +106,14 @@ class _HomePageState extends State<HomePage>
               ),
             ),
             // Mouse tracker - positioned inside Stack with Positioned widget
-            Positioned(
-              left: _mousePosition.dx - 1,
-              top: _mousePosition.dy - 1,
-              child: IgnorePointer(
+            // Positioned(
+            //   left: _mousePosition.dx - 1,
+            //   top: _mousePosition.dy - 1,
+            //   child:
+               IgnorePointer(
                 child: SmoothPhysicsCursor(targetPosition: _mousePosition),
               ),
-            ),
+            // ),
           ],
         ),
       ),

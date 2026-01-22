@@ -76,14 +76,8 @@ class _ShadowCursorPainter extends CustomPainter {
       ..color = Colors.orange
       ..style = PaintingStyle.fill;
 
-    canvas.drawCircle(mousePosition, 5, paint);
+    canvas.drawCircle(mousePosition, 4, paint);
 
-    final borderPaint = Paint()
-      ..color = Colors.orange.withOpacity(0.5)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = .5;
-
-    canvas.drawCircle(mousePosition, 5, borderPaint);
   }
 
   @override
