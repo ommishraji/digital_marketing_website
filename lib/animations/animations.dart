@@ -239,3 +239,64 @@ class _RotationAnimationState extends State<RotationAnimation>
     );
   }
 }
+
+class SlideFromSideAnimation extends StatefulWidget {
+  const SlideFromSideAnimation({
+    super.key,
+    required this.child,
+    this.delay = Duration.zero,
+    this.fromLeft = true,
+  });
+
+  final Widget child;
+  final Duration delay;
+  final bool fromLeft;
+
+  @override
+  State<SlideFromSideAnimation> createState() => _SlideFromSideAnimationState();
+}
+
+class _SlideFromSideAnimationState extends State<SlideFromSideAnimation>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<Offset> _slideAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 900),
+    );
+
+    Future.delayed(widget.delay, () {
+      if (mounted) {
+        _controller.forward();
+      }
+    });
+
+    final offset =
+        widget.fromLeft ? const Offset(-1.0, 0) : const Offset(1.0, 0);
+
+    _slideAnimation = Tween<Offset>(begin: offset, end: Offset.zero).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeOutCubic),
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SlideTransition(
+      position: _slideAnimation,
+      child: FadeTransition(
+        opacity: _controller,
+        child: widget.child,
+      ),
+    );
+  }
+}

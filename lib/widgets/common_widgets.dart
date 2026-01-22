@@ -52,8 +52,8 @@ class SocialIcon extends StatelessWidget {
   }
 }
 
-class _TextField extends StatelessWidget {
-  const _TextField({required this.hint});
+class CustomTextField extends StatelessWidget {
+  const CustomTextField({required this.hint});
 
   final String hint;
 
@@ -72,4 +72,3 @@ class _TextField extends StatelessWidget {
     );
   }
 }
-
