@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
 
 class AnimatedScaleOnHover extends StatefulWidget {
   const AnimatedScaleOnHover({super.key, required this.child});

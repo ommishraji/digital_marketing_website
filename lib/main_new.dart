@@ -4,7 +4,6 @@ import 'widgets/header.dart';
 import 'widgets/smooth_physics_cursor.dart';
 import 'sections/hero_section.dart';
 import 'sections/features_section.dart';
-import 'utils/background_painter.dart';
 
 void main() {
   runApp(const ShubhamDigitalMarketingApp());

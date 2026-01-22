@@ -1,5 +1,6 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
-import '../animations/animations.dart';
 
 class HeroSection extends StatefulWidget {
   const HeroSection({super.key, this.mousePosition = Offset.zero});

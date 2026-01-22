@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
+import 'package:flutter/scheduler.dart';
+
 class SmoothPhysicsCursor extends StatefulWidget {
   const SmoothPhysicsCursor({super.key, required this.targetPosition});
 
